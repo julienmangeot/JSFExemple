@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title>Add a product </title>
+
+</head>
+<body>
+<h:form>
+<h:outputLabel>Nom produit</h:outputLabel>
+<h:inputText value="#{gp.produit.nomProduit}"></h:inputText><br/>
+<h:outputLabel>Decription produit</h:outputLabel>
+<h:inputText value="#{gp.produit.descri}"></h:inputText><br/>
+<h:outputLabel>Prix produit</h:outputLabel>
+<h:inputText value="#{gp.produit.prix}"></h:inputText><br/>
+<h:commandButton value="valider" action="#{gp.ajoutProduit()}"></h:commandButton>
+</h:form>
+</body>
+</html>
