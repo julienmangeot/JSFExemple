@@ -11,22 +11,28 @@ public class GestionProduit {
 	
 	private Produit produit = new Produit();
 	private IProduitDao dao = new ProduitDao();
+	private Marque marque = new Marque();
+//	private int idMarque;
 	
 	public GestionProduit() {
 	}
 
 	public String ajoutProduit() {
+		produit.setMarque(marque);
 		dao.saveProduit(produit);
+		
 		return "listproduit";
 	}
 
 	public List<Produit> getListProduit(){
 		return dao.getProduits();
 	}
-//
-//	public List<Produit> getListProduit(Marque marque){
-//		return dao.getProduits(marque);
-//	}
+
+	public List<Produit> getListProduits(){
+//		idMarque=marque.getIdMarque();
+//		marque.setIdMarque(idMarque);
+		return dao.getProduits(marque);
+	}
 	
 	public Produit getProduit() {
 		return produit;
@@ -44,4 +50,13 @@ public class GestionProduit {
 		this.dao = dao;
 	}
 
+	public Marque getMarque() {
+		return marque;
+	}
+
+	public void setMarque(Marque marque) {
+		this.marque = marque;
+	}
+
+	
 }

@@ -15,6 +15,8 @@
 <h:link value="Ajouter une marque" outcome="createmarque.xhtml"></h:link><br/>
 <h:link value="liste des produits" outcome="listproduit.xhtml"></h:link><br/>
 <h:link value="liste des marques" outcome="listmarque.xhtml"></h:link><br/>
+<h:link value="Produits d'une marque" outcome="produitfrommarque.xhtml"></h:link><br/>
+
 <h:form>
 <h:outputLabel>Nom produit</h:outputLabel>
 <h:inputText value="#{gp.produit.nomProduit}"></h:inputText><br/>
@@ -22,6 +24,11 @@
 <h:inputText value="#{gp.produit.descri}"></h:inputText><br/>
 <h:outputLabel>Prix produit</h:outputLabel>
 <h:inputText value="#{gp.produit.prix}"></h:inputText><br/>
+
+<h:outputLabel>Marque produit</h:outputLabel>
+<h:selectOneMenu value="#{gp.marque.idMarque}"> 
+  <f:selectItems value="#{gm.getListMarque()}" var="m" itemLabel="#{m.nomMarque}" itemValue="#{m.idMarque}" ></f:selectItems>
+</h:selectOneMenu> 
 
 <h:commandButton value="valider" action="#{gp.ajoutProduit()}"></h:commandButton>
 </h:form>

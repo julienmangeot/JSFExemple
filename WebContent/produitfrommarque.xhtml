@@ -7,22 +7,25 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <head>
-<title>Add a marque </title>
+<title>List product of a select mark </title>
 
 </head>
 <body>
 <h:link value="Retourner à l'index" outcome="index.xhtml"></h:link><br/>
 <h:link value="Ajouter un produit" outcome="createproduit.xhtml"></h:link><br/>
+<h:link value="Ajouter une marque" outcome="createmarque.xhtml"></h:link><br/>
 <h:link value="liste des produits" outcome="listproduit.xhtml"></h:link><br/>
-<h:link value="liste des marques" outcome="listmarque.xhtml"></h:link><br/>
-<h:link value="Produits d'une marque" outcome="produitfrommarque.xhtml"></h:link><br/>
-
 <h:form>
-<h:outputLabel>Nom marque</h:outputLabel>
-<h:inputText value="#{gm.marque.nomMarque}"></h:inputText><br/>
-<h:outputLabel>Date création marque</h:outputLabel>
-<h:inputText value="#{gm.marque.dateMarque}"><f:convertDateTime pattern="yyyy-MM-dd"/></h:inputText><br/>
-<h:commandButton value="valider" action="#{gm.ajoutMarque()}"></h:commandButton>
+<h:outputLabel>Sélectionner une marque</h:outputLabel>
+<h:selectOneMenu value="#{gp.marque.idMarque}"> 
+  <f:selectItems value="#{gm.getListMarque()}" var="m" itemLabel="#{m.nomMarque}" itemValue="#{m.idMarque}" ></f:selectItems>
+</h:selectOneMenu>
+<h:commandButton value="valider" action="#{gp.getListProduits()}"></h:commandButton>
 </h:form>
+
+<h:outputLabel>Voici la liste des produits associés</h:outputLabel>
+<ui:repeat var="produit" value="#{gp.getListProduits()}">
+#{produit}<br/>
+</ui:repeat>
 </body>
 </html>

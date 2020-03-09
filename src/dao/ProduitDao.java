@@ -58,7 +58,7 @@ public class ProduitDao implements IProduitDao{
 		try {
 			Session s=factory.openSession();
 			s.beginTransaction();
-			Query query = s.createQuery("from Produit where Marque.idMarque= :idMarque");
+			Query query = s.createQuery("from Produit where marque.idMarque= :idMarque");
 			query.setParameter("idMarque", marque.getIdMarque());
 			list=query.list();
 			

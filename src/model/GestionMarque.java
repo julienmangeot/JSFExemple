@@ -10,8 +10,8 @@ import dao.MarqueDao;
 @ManagedBean(name="gm")
 public class GestionMarque {
 	
-	Marque marque = new Marque();
-	IMarqueDao dao = new MarqueDao();
+	private Marque marque = new Marque();
+	private IMarqueDao dao = new MarqueDao();
 	
 	public GestionMarque() {
 	}

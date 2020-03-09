@@ -15,8 +15,11 @@
 <h:link value="Ajouter un produit" outcome="createproduit.xhtml"></h:link><br/>
 <h:link value="Ajouter une marque" outcome="createmarque.xhtml"></h:link><br/>
 <h:link value="liste des marques" outcome="listmarque.xhtml"></h:link><br/>
+<h:link value="Produits d'une marque" outcome="produitfrommarque.xhtml"></h:link><br/>
+
 <ui:repeat var="produit" value="#{gp.getListProduit()}">
 #{produit}<br/>
 </ui:repeat>
+
 </body>
 </html>
