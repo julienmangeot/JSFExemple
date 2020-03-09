@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import dao.IMarqueDao;
@@ -11,9 +13,16 @@ public class GestionMarque {
 	Marque marque = new Marque();
 	IMarqueDao dao = new MarqueDao();
 	
+	public GestionMarque() {
+	}
+
 	public String ajoutMarque() {
 		dao.saveMarque(marque);
-		return "index";
+		return "listmarque";
+	}
+	
+	public List<Marque> getListMarque(){
+		return dao.getMarques();
 	}
 
 	public Marque getMarque() {

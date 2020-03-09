@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ public class Produit {
 	@Id
 	@GeneratedValue
 	private int idProduit;
+	@Column(nullable= false, unique = true)
 	private String nomProduit;
 	private String descri;
 	private double prix;
@@ -74,9 +76,4 @@ public class Produit {
 		return "Produit [idProduit=" + idProduit + ", nomProduit=" + nomProduit + ", descri=" + descri + ", prix="
 				+ prix + ", marque=" + marque + "]";
 	}
-
-	
-	
-	
-
 }
