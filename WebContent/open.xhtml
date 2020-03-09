@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title>Login yourself </title>
+
+</head>
+<body>
+<h:form>
+<h1>Create a User</h1>
+<h:outputLabel>new Login</h:outputLabel>
+<h:inputText value="#{ga.user.login}"></h:inputText><br/>
+<h:outputLabel>new Password</h:outputLabel>
+<h:inputText value="#{ga.user.mdp}"></h:inputText><br/>
+<h:commandButton value="valider" action="#{ga.ajoutUser()}"></h:commandButton>
+</h:form>
+
+<h:form>
+<h1>Enter your login and password</h1>
+<h:outputLabel>Login</h:outputLabel>
+<h:inputText value="#{ga.user.login}"></h:inputText><br/>
+<h:outputLabel>Password</h:outputLabel>
+<h:inputText value="#{ga.user.mdp}"></h:inputText><br/>
+<h:commandButton value="valider" action="#{ga.verif()}"></h:commandButton>
+</h:form>
+</body>
+</html>

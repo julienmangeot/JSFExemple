@@ -12,7 +12,7 @@ public class GestionProduit {
 	private Produit produit = new Produit();
 	private IProduitDao dao = new ProduitDao();
 	private Marque marque = new Marque();
-//	private int idMarque;
+
 	
 	public GestionProduit() {
 	}
@@ -29,8 +29,7 @@ public class GestionProduit {
 	}
 
 	public List<Produit> getListProduits(){
-//		idMarque=marque.getIdMarque();
-//		marque.setIdMarque(idMarque);
+
 		return dao.getProduits(marque);
 	}
 	

@@ -6,13 +6,17 @@ import java.util.Date;
 
 import dao.IMarqueDao;
 import dao.IProduitDao;
+import dao.IUserDAO;
 import dao.MarqueDao;
 import dao.ProduitDao;
+import dao.UserDAO;
 import model.Marque;
 import model.Produit;
+import model.User;
 
 public class MainTest {
 	public static void main(String[] args) {
+		
 		
 //		Produit p =new Produit("az","aq", 1000);
 //		IProduitDao dao = new ProduitDao();
@@ -39,5 +43,16 @@ public class MainTest {
 //		e.printStackTrace();
 //		System.out.println("failed");
 //	}
-}
+
+	
+//	User user =new User("bonjour", "bonsoir");
+//	IUserDAO dao = new UserDAO();
+//	
+//	dao.saveUser(user);
+	
+	
+	
+	
+	
+	}
 }
