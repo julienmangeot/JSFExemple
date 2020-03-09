@@ -46,7 +46,7 @@ public class Marque {
 	}
 
 	public String toString() {
-		return "Marque [idMarque=" + idMarque + ", nomMarque=" + nomMarque + ", dateMarque=" + dateMarque + "]";
+		return "Identifiant :" + idMarque + ", Nom :" + nomMarque + ", Date de création :" + dateMarque;
 	}
 	
 

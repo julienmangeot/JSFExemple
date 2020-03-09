@@ -12,18 +12,19 @@ import model.Marque;
 import model.Produit;
 
 public class ProduitDao implements IProduitDao{
+	
+	private SessionFactory factory = ConnectionDB.getInstance().getFactory();
+
 
 	public boolean saveProduit(Produit produit) {
 		try {
-		SessionFactory factory = ConnectionDB.getInstance().getFactory();
-		Session s=ConnectionDB.getInstance().getS();
+			Session s=factory.openSession();
+			s.beginTransaction();
+			s.save(produit);
+			s.getTransaction().commit();
 		
-		s.beginTransaction();
-		s.save(produit);
-		s.getTransaction().commit();
-		
-		System.out.println("Produit saving succeded");
-		return true;
+			System.out.println("Produit saving succeded");
+			return true;
 		}
 		catch(HibernateException e) {
 			e.printStackTrace();
@@ -36,9 +37,7 @@ public class ProduitDao implements IProduitDao{
 	public List<Produit> getProduits() {
 		List<Produit> list = new ArrayList<Produit>();
 		try {
-			SessionFactory factory = ConnectionDB.getInstance().getFactory();
-			Session s=ConnectionDB.getInstance().getS();
-			
+			Session s=factory.openSession();
 			s.beginTransaction();
 			Query query = s.createQuery("from Produit");
 			list=query.list();
@@ -57,9 +56,7 @@ public class ProduitDao implements IProduitDao{
 	public List<Produit> getProduits(Marque marque) {
 		List<Produit> list = new ArrayList<Produit>();
 		try {
-			SessionFactory factory = ConnectionDB.getInstance().getFactory();
-			Session s=ConnectionDB.getInstance().getS();
-			
+			Session s=factory.openSession();
 			s.beginTransaction();
 			Query query = s.createQuery("from Produit where Marque.idMarque= :idMarque");
 			query.setParameter("idMarque", marque.getIdMarque());

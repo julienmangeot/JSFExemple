@@ -11,13 +11,11 @@ import org.hibernate.SessionFactory;
 import model.Marque;
 
 public class MarqueDao implements IMarqueDao{
-
+	private SessionFactory factory = ConnectionDB.getInstance().getFactory();
 	
 	public boolean saveMarque(Marque marque) {
 		try {
-			SessionFactory factory = ConnectionDB.getInstance().getFactory();
-			Session s=ConnectionDB.getInstance().getS();
-			
+			Session s=factory.openSession();
 			s.beginTransaction();
 			s.save(marque);
 			s.getTransaction().commit();
@@ -36,9 +34,7 @@ public class MarqueDao implements IMarqueDao{
 	public List<Marque> getMarques() {
 		List<Marque> list= new ArrayList<Marque>();
 		try {
-			SessionFactory factory = ConnectionDB.getInstance().getFactory();
-			Session s=ConnectionDB.getInstance().getS();
-			
+			Session s=factory.openSession();
 			s.beginTransaction();
 			Query query=s.createQuery("from Marque");
 			list=query.list();

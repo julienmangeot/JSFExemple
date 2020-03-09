@@ -73,7 +73,7 @@ public class Produit {
 
 	
 	public String toString() {
-		return "Produit [idProduit=" + idProduit + ", nomProduit=" + nomProduit + ", descri=" + descri + ", prix="
-				+ prix + ", marque=" + marque + "]";
+		return "Identifiant :" + idProduit + ", Nom :" + nomProduit + ", Decription :" + descri + ", Prix :"
+				+ prix + ", Marque :" + marque;
 	}
 }

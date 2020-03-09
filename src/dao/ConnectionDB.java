@@ -7,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 public class ConnectionDB {
 	
 	private SessionFactory factory=null;
-	private Session s=null;
 	private static ConnectionDB instance=null;
 	
 	private ConnectionDB() {
@@ -18,13 +17,6 @@ public class ConnectionDB {
 			factory = new Configuration().configure().buildSessionFactory();
 		}
 		return factory;
-	}
-
-	public Session getS() {
-		if(s==null) {
-			s = factory.openSession();
-		}
-		return s;
 	}
 
 	public static ConnectionDB getInstance() {
