@@ -16,7 +16,7 @@ public class GestionAccess {
 	}
 	
 	public String verif() {
-		if(dao.getTheUser(user)==true) {
+		if(dao.findUser(user)==true) {
 			return "index";
 		}
 		return "error";

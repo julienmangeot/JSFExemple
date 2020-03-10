@@ -20,7 +20,6 @@ public class GestionProduit {
 	public String ajoutProduit() {
 		produit.setMarque(marque);
 		dao.saveProduit(produit);
-		
 		return "listproduit";
 	}
 
@@ -29,7 +28,6 @@ public class GestionProduit {
 	}
 
 	public List<Produit> getListProduits(){
-
 		return dao.getProduits(marque);
 	}
 	

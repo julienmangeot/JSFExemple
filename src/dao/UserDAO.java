@@ -29,13 +29,14 @@ public class UserDAO implements IUserDAO{
 		}
 	}
 
-	public boolean getTheUser(User user) {
+	public boolean findUser(User user) {
 		try {
 			Session s=factory.openSession();
 			s.beginTransaction();
-			Query query = s.createQuery("from User where user.login= :login and user.mdp= :mdp");
-//			user=(User) query.list();
-			if((User) query.list()!=null) {
+			Query query = s.createQuery("from User where login= :login and mdp= :mdp");
+			query.setParameter("login", user.getLogin());
+			query.setParameter("mdp", user.getMdp());
+			if((User) query.uniqueResult()!=null) {
 			
 			System.out.println("User display succeded");
 			return true;
@@ -50,4 +51,20 @@ public class UserDAO implements IUserDAO{
 				return false;
 			}
 	}
+	
+//	public User findUser(User userf) {
+//		try {
+//			Session s=factory.openSession();
+//			s.beginTransaction();
+//			Query query =session.createQuery("from User where username= :username and password= :password");
+//			query.setParameter("username", userf.getLogin());
+//			query.setParameter("password", userf.getMdp());
+//			User user =(User) query.uniqueResult();
+//			return user;
+//		}
+//		catch(HibernateException e){
+//			e.printStackTrace();
+//			return null;
+//		}
+//	}
 }

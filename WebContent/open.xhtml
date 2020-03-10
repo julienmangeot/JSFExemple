@@ -16,7 +16,7 @@
 <h:outputLabel>new Login</h:outputLabel>
 <h:inputText value="#{ga.user.login}"></h:inputText><br/>
 <h:outputLabel>new Password</h:outputLabel>
-<h:inputText value="#{ga.user.mdp}"></h:inputText><br/>
+<h:inputSecret value="#{ga.user.mdp}"></h:inputSecret><br/>
 <h:commandButton value="valider" action="#{ga.ajoutUser()}"></h:commandButton>
 </h:form>
 
@@ -25,7 +25,7 @@
 <h:outputLabel>Login</h:outputLabel>
 <h:inputText value="#{ga.user.login}"></h:inputText><br/>
 <h:outputLabel>Password</h:outputLabel>
-<h:inputText value="#{ga.user.mdp}"></h:inputText><br/>
+<h:inputSecret value="#{ga.user.mdp}"></h:inputSecret><br/>
 <h:commandButton value="valider" action="#{ga.verif()}"></h:commandButton>
 </h:form>
 </body>
