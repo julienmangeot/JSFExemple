@@ -15,6 +15,14 @@ public class GestionMarque {
 	
 	public GestionMarque() {
 	}
+	
+	public Marque getMarque() {
+		return marque;
+	}
+
+	public void setMarque(Marque marque) {
+		this.marque = marque;
+	}
 
 	public String ajoutMarque() {
 		dao.saveMarque(marque);
@@ -25,21 +33,7 @@ public class GestionMarque {
 		return dao.getMarques();
 	}
 
-	public Marque getMarque() {
-		return marque;
-	}
-
-	public void setMarque(Marque marque) {
-		this.marque = marque;
-	}
-
-	public IMarqueDao getDao() {
-		return dao;
-	}
-
-	public void setDao(IMarqueDao dao) {
-		this.dao = dao;
-	}
+	
 
 	
 }

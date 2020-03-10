@@ -8,7 +8,7 @@
 
 <head>
 <title>Add a product </title>
-
+<link rel="stylesheet" href="bootstrap.min.css" />
 </head>
 <body>
 <h:link value="Retourner à l'index" outcome="index.xhtml"></h:link><br/>
@@ -19,18 +19,18 @@
 
 <h:form>
 <h:outputLabel>Nom produit</h:outputLabel>
-<h:inputText value="#{gp.produit.nomProduit}"></h:inputText><br/>
+<h:inputText value="#{gp.produit.nomProduit}" class="form-control"></h:inputText><br/>
 <h:outputLabel>Decription produit</h:outputLabel>
-<h:inputText value="#{gp.produit.descri}"></h:inputText><br/>
+<h:inputText value="#{gp.produit.descri}" class="form-control"></h:inputText><br/>
 <h:outputLabel>Prix produit</h:outputLabel>
-<h:inputText value="#{gp.produit.prix}"></h:inputText><br/>
+<h:inputText value="#{gp.produit.prix}" class="form-control"></h:inputText><br/>
 
 <h:outputLabel>Marque produit</h:outputLabel>
 <h:selectOneMenu value="#{gp.marque.idMarque}"> 
   <f:selectItems value="#{gm.getListMarque()}" var="m" itemLabel="#{m.nomMarque}" itemValue="#{m.idMarque}" ></f:selectItems>
 </h:selectOneMenu> 
 
-<h:commandButton value="valider" action="#{gp.ajoutProduit()}"></h:commandButton>
+<h:commandButton value="valider" action="#{gp.ajoutProduit()}" class="btn btn-primary"></h:commandButton>
 </h:form>
 </body>
 </html>

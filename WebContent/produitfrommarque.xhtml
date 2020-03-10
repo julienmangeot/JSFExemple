@@ -8,7 +8,7 @@
 
 <head>
 <title>List product of a select mark </title>
-
+<link rel="stylesheet" href="bootstrap.min.css" />
 </head>
 <body>
 <h:link value="Retourner à l'index" outcome="index.xhtml"></h:link><br/>
@@ -20,7 +20,7 @@
 <h:selectOneMenu value="#{gp.marque.idMarque}"> 
   <f:selectItems value="#{gm.getListMarque()}" var="m" itemLabel="#{m.nomMarque}" itemValue="#{m.idMarque}" ></f:selectItems>
 </h:selectOneMenu>
-<h:commandButton value="valider" action="#{gp.getListProduits()}"></h:commandButton>
+<h:commandButton value="valider" action="#{gp.getListProduits()}" class="btn btn-primary"></h:commandButton>
 </h:form>
 
 <h:outputLabel>Voici la liste des produits associés</h:outputLabel>

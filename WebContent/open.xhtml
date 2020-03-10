@@ -8,25 +8,25 @@
 
 <head>
 <title>Login yourself </title>
-
+<link rel="stylesheet" href="bootstrap.min.css" />
 </head>
 <body>
 <h:form>
 <h1>Create a User</h1>
 <h:outputLabel>new Login</h:outputLabel>
-<h:inputText value="#{ga.user.login}"></h:inputText><br/>
+<h:inputText value="#{ga.user.login}" class="form-control"></h:inputText><br/>
 <h:outputLabel>new Password</h:outputLabel>
-<h:inputSecret value="#{ga.user.mdp}"></h:inputSecret><br/>
-<h:commandButton value="valider" action="#{ga.ajoutUser()}"></h:commandButton>
+<h:inputSecret value="#{ga.user.mdp}" class="form-control"></h:inputSecret><br/>
+<h:commandButton value="valider" action="#{ga.ajoutUser()}" class="btn btn-primary"></h:commandButton>
 </h:form>
 
 <h:form>
 <h1>Enter your login and password</h1>
 <h:outputLabel>Login</h:outputLabel>
-<h:inputText value="#{ga.user.login}"></h:inputText><br/>
+<h:inputText value="#{ga.user.login}" class="form-control"></h:inputText><br/>
 <h:outputLabel>Password</h:outputLabel>
-<h:inputSecret value="#{ga.user.mdp}"></h:inputSecret><br/>
-<h:commandButton value="valider" action="#{ga.verif()}"></h:commandButton>
+<h:inputSecret value="#{ga.user.mdp}" class="form-control"></h:inputSecret><br/>
+<h:commandButton value="valider" action="#{ga.verif()}" class="btn btn-primary"></h:commandButton>
 </h:form>
 </body>
 </html>

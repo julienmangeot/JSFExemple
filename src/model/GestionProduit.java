@@ -16,6 +16,23 @@ public class GestionProduit {
 	
 	public GestionProduit() {
 	}
+	
+	public Produit getProduit() {
+		return produit;
+	}
+
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+
+	public Marque getMarque() {
+		return marque;
+	}
+
+	public void setMarque(Marque marque) {
+		this.marque = marque;
+	}
+
 
 	public String ajoutProduit() {
 		produit.setMarque(marque);
@@ -31,29 +48,6 @@ public class GestionProduit {
 		return dao.getProduits(marque);
 	}
 	
-	public Produit getProduit() {
-		return produit;
-	}
-
-	public void setProduit(Produit produit) {
-		this.produit = produit;
-	}
-
-	public IProduitDao getDao() {
-		return dao;
-	}
-
-	public void setDao(IProduitDao dao) {
-		this.dao = dao;
-	}
-
-	public Marque getMarque() {
-		return marque;
-	}
-
-	public void setMarque(Marque marque) {
-		this.marque = marque;
-	}
-
+	
 	
 }

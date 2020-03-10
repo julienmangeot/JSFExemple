@@ -10,6 +10,17 @@ public class GestionAccess {
 	private User user = new User();
 	private IUserDAO dao = new UserDAO();
 	
+	public GestionAccess() {
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 	public String ajoutUser() {
 		dao.saveUser(user);
 		return "open";
@@ -22,21 +33,6 @@ public class GestionAccess {
 		return "error";
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public IUserDAO getDao() {
-		return dao;
-	}
-
-	public void setDao(IUserDAO dao) {
-		this.dao = dao;
-	}
 
 	
 }

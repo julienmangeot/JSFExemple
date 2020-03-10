@@ -8,7 +8,7 @@
 
 <head>
 <title>Add a marque </title>
-
+<link rel="stylesheet" href="bootstrap.min.css" />
 </head>
 <body>
 <h:link value="Retourner à l'index" outcome="index.xhtml"></h:link><br/>
@@ -19,10 +19,10 @@
 
 <h:form>
 <h:outputLabel>Nom marque</h:outputLabel>
-<h:inputText value="#{gm.marque.nomMarque}"></h:inputText><br/>
+<h:inputText value="#{gm.marque.nomMarque}" class="form-control"></h:inputText><br/>
 <h:outputLabel>Date création marque</h:outputLabel>
-<h:inputText value="#{gm.marque.dateMarque}"><f:convertDateTime pattern="yyyy-MM-dd"/></h:inputText><br/>
-<h:commandButton value="valider" action="#{gm.ajoutMarque()}"></h:commandButton>
+<h:inputText value="#{gm.marque.dateMarque}" class="form-control"><f:convertDateTime pattern="yyyy-MM-dd"/></h:inputText><br/>
+<h:commandButton value="valider" action="#{gm.ajoutMarque()}" class="btn btn-primary"></h:commandButton>
 </h:form>
 </body>
 </html>
